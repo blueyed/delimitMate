@@ -395,7 +395,7 @@ function! delimitMate#QuoteDelim(char) "{{{
 	elseif a:char == '"' && index(split(&ft, '\.'), "vim") != -1 && getline('.') =~ '^\s*$'
 		" If we are in a vim file and it looks like we're starting a comment, do
 		" not add a closing char.
-		return a:char
+		return a:char . ' '
 	elseif delimitMate#IsSmartQuote(a:char)
 		" Seems like a smart quote, insert a single char.
 		return a:char
